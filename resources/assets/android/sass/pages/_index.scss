@@ -1,0 +1,39 @@
+@mixin com-bilibili-index() {
+    picture {
+        display: flex;
+        width: 100%;
+        > img {
+            display: block;
+            width: 100%;
+        }
+    }
+    [page=index] {
+        .shape.button-shape-container.test-button-shape {
+            @include com-zhilizhili-button-shape-button-init(9, 16);
+            @include register-hook("#{&}");
+        }
+        .shape.button-shape-container.test-button-square {
+            @include com-zhilizhili-button-square-button-init();
+            @include register-hook("#{&}");
+        }
+        .shape.button-shape-container.test-button-circle {
+            @include com-zhilizhili-button-circle-button-init();
+            @include register-hook("#{&}");
+        }
+    }
+}
+
+@mixin com-bilibili-index-polyfill() {
+    [page=index] {
+
+    }
+    @include use-hook("[page=index] .shape.button-shape-container.test-button-shape") {
+        @include com-zhilizhli-button-shape-button-polyfill(240);
+    }
+    @include use-hook("[page=index] .shape.button-shape-container.test-button-square") {
+        @include com-zhilizhli-button-shape-button-polyfill(240);
+    }
+    @include use-hook("[page=index] .shape.button-shape-container.test-button-circle") {
+        @include com-zhilizhli-button-shape-button-polyfill(240);
+    }
+}

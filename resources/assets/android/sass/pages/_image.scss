@@ -1,0 +1,43 @@
+@mixin com-bilibili-image() {
+    .com-zhilizhili-test-responsive-image {
+        background-size: cover;
+        background-position: center center;
+        @include xhdpi() {
+            background-image: url("../static/img/index/video-1.png");
+        }
+        @include xxhdpi() {
+            background-image: url("../static/img/index/video-2.png");
+        }
+        @include xxxhdpi() {
+            background-image: url("../static/img/index/video-3.png");
+        }
+        @include ipad() {
+            background-image: url("../static/img/index/video-4.png");
+        }
+        @include ipad-retina() {
+            background-image: url("../static/img/index/slide1.png");
+        }
+        @include galaxy-tab-10() {
+            background-image: none;
+            background-color: #0b97c4;
+        }
+        @include nexus-7() {
+            background-image: none;
+            background-color: #00A000;
+        }
+        @include nexus-9() {
+            background-image: none;
+            background-color: #000080;
+        }
+        @include register-hook("#{&}");
+    }
+}
+
+@mixin com-bilibili-image-polyfill() {
+    @include use-hook(".com-zhilizhili-test-responsive-image") {
+        @include polyfill-gaoji-set((
+            width: 180 #dp,
+            height: 150 #dp
+        ))
+    }
+}

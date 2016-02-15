@@ -1,0 +1,43 @@
+@mixin com-zhilizhili-swipe-view-swipe-init-index() {
+    visibility: visible;
+}
+
+// pos
+// index > pos ? -width : (index < pos ? width : 0)
+@mixin com-zhilizhili-swipe-view-swipe-init-index-polyfill($length, $index) {
+    $wrap-width: 360 * $length;
+    $item-width: 360;
+
+    .swipe-view-wrap {
+        @include polyfill-gaoji-set((
+            width: $wrap-width #dp
+        ));
+    }
+
+    @for $pos from 1 through $length {
+        $translate: if($index > ($pos - 1), -$item-width, ( if($index < ($pos - 1), $item-width, 0) ) );
+        .swipe-view__item:nth-child(#{$pos}) {
+            @include polyfill-gaoji-set((
+                width: ($item-width) #dp,
+                left: (-$item-width * ($pos - 1)) #dp,
+                transform: polyfill-transform-adapter((
+                    x: $translate #dp,
+                    y: 0,
+                    z: 0
+                ))
+            ));
+        }
+    }
+}
+
+@mixin com-bilibili-swipe() {
+    #testSwipeView {
+        @include com-zhilizhili-swipe-view-swipe-init-index();
+    }
+}
+
+@mixin com-bilibili-swipe-polyfill() {
+    #testSwipeView {
+        @include com-zhilizhili-swipe-view-swipe-init-index-polyfill(3, 1);
+    }
+}

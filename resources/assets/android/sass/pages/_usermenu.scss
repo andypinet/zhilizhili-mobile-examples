@@ -1,0 +1,162 @@
+@mixin com-bilibili-pages-usermenu() {
+    .bilibili-postcard {
+        color: get-custom-color("grey", "300");
+        background-color: get-custom-color("pink", "600");
+        font: normal 12px Verdana, sans-serif;
+        .postcard__user {
+            background-color: get-custom-color("grey", "400");
+            border: 1px solid #ffffff;
+            picture {
+                display: block;
+            }
+            @include register-hook("#{&}");
+        }
+        .postcard__action {
+            @include register-hook("#{&}");
+        }
+        @include element("user-level") {
+            transform: scale(0.75);
+            border-color: get-custom-color("pink", "200");
+            //position: relative;
+            //top: 3px;
+        }
+        @include element("user-sex") {
+            transform: scale(0.75);
+            //position: relative;
+            //top: 3px;
+        }
+        @include element("dogpai") {
+            transform: scale(0.75);
+            transform-origin: center top;
+            position: relative;
+            left: -12.5%;
+            color: get-custom-color("pink", "600");
+            background-color: get-custom-color("pink", "200");
+            @include register-hook("#{&}");
+        }
+        @include element("user-info") {
+            @include register-hook("#{&}");
+        }
+        @include element("user-b") {
+            color: get-custom-color("pink", "300");
+        }
+        @include register-hook("#{&}");
+    }
+    @include use-hook(".bilibili-postcard .postcard__action") {
+        border: 1px solid transparent;
+        &.grey {
+            border-color: get-custom-color("grey", "200");
+        }
+        .icon {
+            line-height: 1.6em;
+            @include register-hook("#{&}");
+        }
+    }
+    .bilibili-action-bar {
+        .table-view__section:not(:last-of-type) {
+            position: relative;
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: get-custom-color("grey", "500");
+            }
+        }
+        .table-view__cell {
+            @extend .mdl-font-size-900;
+            color: get-custom-color("grey", "600");
+            &:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 10px;
+                background-color: transparent;
+            }
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                background-color: transparent;
+            }
+            &:last-of-type {
+                &:after {
+                    height: 10px;
+                }
+            }
+            &.active {
+                color: get-custom-color("pink", "600");
+                > .layout {
+                    background-color: get-custom-color("grey", "300");
+                }
+            }
+            .table-view__header {
+                .icon {
+                    @include register-hook("#{&}");
+                }
+            }
+            @include register-hook("#{&}");
+        }
+        .table-view__body {
+            padding: 0;
+        }
+    }
+    .bilibili-navigate-action {
+        @include register-hook("#{&}");
+    }
+    @include use-hook(".bilibili-navigate-action") {
+        .layout__item {
+            position: relative;
+            @include register-hook("#{&}");
+        }
+    }
+}
+
+@mixin com-bilibili-pages-usermenu-polyfill() {
+    @include use-hook(".bilibili-postcard") {
+        @extend .mdl-font-size-600;
+        @include polyfill-gaoji-set((
+            padding: 45 #vw
+        ));
+    }
+    @include use-hook(".bilibili-postcard .postcard__user") {
+        @include polyfill-gaoji-set((
+            width: 215 #vw
+        ));
+    }
+    @include use-hook(".bilibili-postcard .bilibili-postcard__user-info") {
+        @extend .mdl-margin-top-300;
+    }
+    @include use-hook(".bilibili-postcard .bilibili-postcard__dogpai") {
+    }
+    @include use-hook(".bilibili-postcard .postcard__action") {
+        @include polyfill-gaoji-set((
+            width: 105 #vw,
+            margin-left: 60 #vw
+        ));
+    }
+    @include use-hook(".bilibili-postcard .postcard__action .icon") {
+        @extend .mdl-font-size-850;
+    }
+    @include use-hook(".bilibili-action-bar .table-view__cell .table-view__header .icon") {
+        @extend .mdl-font-size-900;
+        @include polyfill-gaoji-set((
+            margin-left: 53 #vw,
+            margin-right: 100 #vw
+        ))
+    }
+    @include use-hook(".bilibili-navigate-action") {
+        @extend .mdl-font-size-600;
+        @include polyfill-gaoji-set((
+            height: 148 #vw
+        ))
+    }
+    @include use-hook(".bilibili-navigate-action .layout__item") {
+        @include polyfill-gaoji-set((
+            top: 1 #vw
+        ))
+    }
+}

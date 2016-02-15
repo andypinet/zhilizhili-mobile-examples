@@ -1,0 +1,33 @@
+{
+  "minify": true,
+  "options": [
+    "domPrefixes",
+    "prefixes",
+    "addTest",
+    "atRule",
+    "hasEvent",
+    "mq",
+    "prefixed",
+    "prefixedCSS",
+    "prefixedCSSValue",
+    "testAllProps",
+    "testProp",
+    "testStyles",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/fullscreen-api",
+    "test/indexeddb",
+    "test/pagevisibility-api",
+    "test/postmessage",
+    "test/vibration",
+    "test/webgl",
+    "test/css/all",
+    "test/css/backgroundblendmode",
+    "test/css/calc",
+    "test/css/vminunit",
+    "test/css/vwunit",
+    "test/elem/datalist",
+    "test/file/api"
+  ]
+}

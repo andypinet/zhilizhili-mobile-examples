@@ -1,0 +1,585 @@
+// global import
+@import "import";
+
+// reponsive
+@import "../../../../node_modules/sass-mediaqueries/media-queries";
+
+// project import
+@import "utils";
+@import "device";
+@import "color";
+
+@import "typography";
+
+@import "variable";
+
+// icon
+@import "../../../../node_modules/zhilizhili-ui/elements/icon/sass/css-icon";
+@import "icon";
+
+// shape
+@import "../../../../node_modules/zhilizhili-ui-plus/framework/sass/component/shape";
+
+// layout
+@import "../../../../node_modules/zhilizhili-ui/elements/layout/sass/layout";
+@import "../../../../node_modules/zhilizhili-ui/elements/layout/sass/layout-plus";
+@import "../../../../node_modules/zhilizhili-ui/elements/layout/sass/layout-grid";
+@import "layout";
+
+// utility
+@import "../../../../node_modules/zhilizhili-ui/elements/utility/sass/position";
+
+// button
+@import "../../../../node_modules/zhilizhili-ui/elements/button/sass/button";
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/button/sass/shape-button";
+
+// label
+@import "../../../../node_modules/zhilizhili-ui/elements/label/sass/label";
+
+// list-group
+@import "../../../../node_modules/zhilizhili-ui/elements/list-group/sass/list-group";
+
+// form
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form";
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form-group";
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form-field";
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form-select";
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form-checkbox";
+@import "../../../../node_modules/zhilizhili-ui/elements/form/sass/form-radio";
+
+// switch
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/switch/sass/switch";
+
+// mask
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/mask/sass/mask";
+
+// shape
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/shape/sass/square";
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/shape/sass/shape-plus";
+
+// tab-bar
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/tab-bar/sass/tab-bar";
+
+// nav-bar
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/nav-bar/sass/nav-bar";
+
+// table-view
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/table-view/sass/table-view";
+
+// drawer-view
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/drawer-view/sass/drawer-view";
+
+// stack-view
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/stack-view/sass/stack-view";
+
+// swipe-view
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/swipe-view/sass/swipe-view";
+
+// card
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/card/sass/card";
+
+// slider
+@import "../../../../node_modules/zhilizhili-ui-plus/elements/slider/sass/slider";
+
+// dialog
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/dialog/sass/dialog";
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/dialog/sass/comfirm-dialog";
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/dialog/sass/alert-dialog";
+
+// toast
+@import "../../../../node_modules/zhilizhili-ui-touch/elements/toast/sass/toast";
+
+// project consts
+
+// project functions
+
+// project variables
+
+// project mixins
+
+// project interface
+
+// project use mixins
+@include use-border-box();
+@include reset-body-marigin();
+@include full-screen();
+@include use-center-set();
+@include use-full-parent();
+
+@include use-iconfont-iosicons();
+@include use-sans-serif-font();
+@include use-text-align();
+@include use-mask();
+@include use-layout-inline-block-center();
+@include use-button();
+@include use-label();
+@include use-utility-position();
+
+// shape
+@include com-zhilizhili-shape--rectangle-set-square-init();
+@include com-zhilizhili-shape--rectangle-set-4by3-init();
+@include com-zhilizhili-shape--rectangle-set-16by9-init();
+
+// icon
+@include com-zhilizhili-icon-use-css-icon();
+
+// form
+@include use-form();
+@include use-form-group();
+@include use-form-field();
+@include use-form-select();
+@include use-form-checkbox();
+@include use-form-radio();
+
+// switch
+@include use-switch();
+
+// layout
+@include use-layout-flex();
+@include use-layout-flex-group();
+@include com-zhilizhili-layout-use-layout-inline-flex();
+
+@include com-zhilizhili-layout-use-align-items();
+
+@include use-panel();
+
+@include use-tab-bar();
+@include use-nav-bar();
+@include use-table-view();
+@include use-drawer-view();
+@include use-stack-view();
+@include use-swipe-view();
+@include use-card();
+@include use-slider();
+
+// dialog
+@include use-dialog();
+@include use-confirm-dialog();
+@include use-alert-dialog();
+
+// toast
+@include use-toast();
+
+// page import
+
+// page consts
+
+// page functions
+
+// page variables
+
+// page mixins
+
+
+// page interface
+
+// page use mixins
+// style可能不显示 所以放后面加载
+@include use-style-interface();
+
+// layout
+@include use-layout-table();
+@include initlize-layout-calcsize();
+
+// icon
+
+// list-group
+@include use-list-group();
+
+// set page style
+@include initlize-bg-class($custom-color-types);
+@include initlize-color-class($custom-color-types);
+@include initlize-color-gen(".bg-red-yellow", "background-color", "yellow", "700");
+@include initlize-color-gen(".bg-grey-200", "background-color", "grey", "200");
+@include initlize-color-gen(".bg-grey-300", "background-color", "grey", "300");
+@include initlize-color-gen(".bg-grey-400", "background-color", "grey", "400");
+@include initlize-color-gen(".color-grey-light", "color", "grey", "500");
+@include com-zhilizhili-use-header-common();
+@include use-button--basic();
+@include use-button--colored();
+@include use-label--basic();
+@include use-label--colored();
+@include use-form-field--basic();
+@include use-form-select--basic();
+@include use-table-view--basic();
+@include use-stack-view--basic();
+
+@include use-dialog--basic();
+@include use-confirm-dialog--basic();
+@include use-alert-dialog--basic();
+
+@include use-toast--basic();
+
+.bg-white {
+    background-color: #ffffff;
+}
+.color-white {
+    color: #ffffff;
+}
+
+@include use-drawer-view--basic() {
+    > .drawer-view__drawer {
+        width: 85%;
+        left: -85%;
+        background-color: #ffffff;
+        transition-duration: 0s;
+        transition-property: transform;
+        transition-timing-function: ease;
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+    > .drawer-view__mask {
+        background-color: transparent;
+    }
+}
+
+@include use-hook(".drawer-view.drawerout") {
+    > .drawer-view__drawer {
+        transition-duration: 0.75s;
+    }
+}
+
+@include use-hook(".drawer-view.drawering") {
+    > .drawer-view__drawer {
+        transition-duration: 0s;
+    }
+}
+
+@include use-hook(".drawer-view.drawered") {
+    > .drawer-view__drawer {
+        transition-duration: 0.45s;
+    }
+}
+
+// bilibili
+$package: lfx !global;
+$desgin-device-width: 1080 !global;
+$desgin-device-height: 1920 !global;
+$adaptDeviceWidth: $desgin-device-width !global;
+
+@import "pages/usermenu";
+@import "pages/index";
+@import "pages/grid";
+@import "pages/form";
+@import "pages/swipe";
+@import "pages/image";
+@import "pages/tableview";
+@import "pages/card";
+@import "pages/shape";
+
+@mixin com-bilibili-animation() {
+}
+
+@mixin com-bilibili-common() {
+    body {
+        overflow-x: hidden;
+        font-size: 14px;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    a, img {
+        -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+    }
+
+    .utility-poiner-events-none {
+        pointer-events: none;
+    }
+
+    .utility-overflow-auto {
+        overflow: auto;
+    }
+
+    .utility-overflow-hidden {
+        overflow: hidden;
+    }
+    .scene {
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+}
+
+@include com-bilibili-animation();
+@include com-bilibili-common();
+
+@mixin com-bilibili-drawer-view() {
+    @include use-hook(".stack-view:not(.shadow) > .stack-view__item") {
+        @extend %full-parent;
+        @extend .utility-pos-absolute;
+        background-color: #ffffff;
+        &.show {
+            z-index: 1;
+        }
+        &:not(.show) {
+            z-index: -1;
+        }
+    }
+    @include com-bilibili-pages-usermenu();
+}
+
+@mixin com-bilibili-drawer-view-polyfill() {
+    @include com-bilibili-pages-usermenu-polyfill();
+}
+
+@mixin com-bilibili-stack() {
+    @include use-hook(".stack-view:not(.shadow) > .stack-view__item") {
+        @extend %full-parent;
+        @extend .utility-pos-absolute;
+        background-color: #ffffff;
+        &.show {
+            z-index: 1000;
+        }
+        &:not(.show) {
+            z-index: -1;
+        }
+    }
+}
+
+@mixin com-bilibili-stack-polyfill() {
+}
+
+@include com-bilibili-drawer-view();
+@include com-bilibili-stack();
+@include com-bilibili-index();
+@include com-zhilizhili-examples-grid();
+@include com-zhilizhili-examples-form();
+@include com-bilibili-swipe();
+@include com-bilibili-image();
+@include com-bilibili-tableview();
+@include com-zhilizhili-examples-card();
+@include com-zhilizhili-examples-shape();
+
+@mixin com-bilibili-gen-padding-polyfill($level: 600, $polyfill-value: 30, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .padding-horizontal-#{$level} {
+                @include polyfill-gaoji-set((
+                    padding-left: $polyfill-value  #vw,
+                    padding-right: $polyfill-value #vw
+                ));
+            }
+        } @else if $value == vertical {
+            .padding-vertical-#{$level} {
+                @include polyfill-gaoji-set((
+                    padding-top: $polyfill-value  #vw,
+                    padding-bottom: $polyfill-value  #vw
+                ));
+            }
+        } @else {
+            .padding-#{$value}-#{$level} {
+                @include polyfill-gaoji-set((
+                    padding-#{$value}: $polyfill-value  #vw
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-bilibili-gen-margin-polyfill($level: 600, $polyfill-value: 30, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .margin-horizontal-#{$level} {
+                @include polyfill-gaoji-set((
+                    margin-left: $polyfill-value  #vw,
+                    margin-right: $polyfill-value #vw
+                ));
+            }
+        } @else if $value == vertical {
+            .margin-vertical-#{$level} {
+                @include polyfill-gaoji-set((
+                    margin-top: $polyfill-value  #vw,
+                    margin-bottom: $polyfill-value  #vw
+                ));
+            }
+        } @else {
+            .margin-#{$value}-#{$level} {
+                @include polyfill-gaoji-set((
+                    margin-#{$value}: $polyfill-value  #vw
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-zhilizhili-material-design-size-gen($mode, $level: 600, $polyfill-value: 48, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .mdl-#{$mode}-horizontal-#{$level} {
+                @include polyfill-android-set((
+                    #{$mode}-left: $polyfill-value  #dp,
+                    #{$mode}-right: $polyfill-value #dp
+                ));
+            }
+        } @else if $value == vertical {
+            .mdl-#{$mode}-vertical-#{$level} {
+                @include polyfill-android-set((
+                    #{$mode}-top: $polyfill-value  #dp,
+                    #{$mode}-bottom: $polyfill-value  #dp
+                ));
+            }
+        } @else {
+            .mdl-#{$mode}-#{$value}-#{$level} {
+                @include polyfill-android-set((
+                    #{$mode}-#{$value}: $polyfill-value  #dp
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-zhilizhili-material-design-length-gen($mode, $level: 600, $polyfill-value: 48) {
+    .mdl-#{$mode}-#{$level} {
+        @include polyfill-android-set((
+            #{$mode}: $polyfill-value #dp
+        ))
+    }
+}
+
+@mixin com-zhilizhili-material-design-polyfill() {
+    @include com-zhilizhili-material-design-size-gen(padding, 400, 32);
+    @include com-zhilizhili-material-design-size-gen(padding, 300, 24);
+    @include com-zhilizhili-material-design-size-gen(padding, 250, 20);
+    @include com-zhilizhili-material-design-size-gen(padding, 200, 16);
+    @include com-zhilizhili-material-design-size-gen(padding, 175, 14);
+    @include com-zhilizhili-material-design-size-gen(padding, 150, 12);
+    @include com-zhilizhili-material-design-size-gen(padding, 125, 10);
+    @include com-zhilizhili-material-design-size-gen(padding, 100, 8);
+    @include com-zhilizhili-material-design-size-gen(padding, 75, 6);
+    @include com-zhilizhili-material-design-size-gen(margin, 400, 32);
+    @include com-zhilizhili-material-design-size-gen(margin, 300, 24);
+    @include com-zhilizhili-material-design-size-gen(margin, 250, 20);
+    @include com-zhilizhili-material-design-size-gen(margin, 200, 16);
+    @include com-zhilizhili-material-design-size-gen(margin, 175, 14);
+    @include com-zhilizhili-material-design-size-gen(margin, 150, 12);
+    @include com-zhilizhili-material-design-size-gen(margin, 125, 10);
+    @include com-zhilizhili-material-design-size-gen(margin, 100, 8);
+    @include com-zhilizhili-material-design-size-gen(margin, 75, 6);
+    @include com-zhilizhili-material-design-length-gen(height, 450, 36);
+    @include com-zhilizhili-material-design-length-gen(border-radius, 100, 2);
+    @include com-zhilizhili-material-design-length-gen(font-size, 550, 12);
+    @include com-zhilizhili-material-design-length-gen(font-size, 600, 14);
+    @include com-zhilizhili-material-design-length-gen(font-size, 650, 16);
+    @include com-zhilizhili-material-design-length-gen(font-size, 700, 18);
+    @include com-zhilizhili-material-design-length-gen(font-size, 750, 20);
+    @include com-zhilizhili-material-design-length-gen(font-size, 800, 22);
+    @include com-zhilizhili-material-design-length-gen(font-size, 850, 24);
+    @include com-zhilizhili-material-design-length-gen(font-size, 900, 26);
+    @include com-zhilizhili-material-design-length-gen(width, 1, 30);
+    @include com-zhilizhili-material-design-length-gen(width, 2, 60);
+    @include com-zhilizhili-material-design-length-gen(width, 3, 90);
+    @include com-zhilizhili-material-design-length-gen(width, 4, 120);
+    @include com-zhilizhili-material-design-length-gen(width, 5, 150);
+    @include com-zhilizhili-material-design-length-gen(width, 6, 180);
+    @include com-zhilizhili-material-design-length-gen(width, 7, 210);
+    @include com-zhilizhili-material-design-length-gen(width, 8, 240);
+    @include com-zhilizhili-material-design-length-gen(width, 9, 270);
+    @include com-zhilizhili-material-design-length-gen(width, 10, 300);
+    @include com-zhilizhili-material-design-length-gen(width, 11, 330);
+    @include com-zhilizhili-material-design-length-gen(width, 12, 360);
+    body {
+        @extend .mdl-font-size-600;
+        line-height: 1.42857;
+    }
+    .mdl-shape-2dp {
+        @include polyfill-android-set((
+            border-radius: 2 #dp
+        ))
+    }
+}
+
+
+@mixin polyfill() {
+    //.font-size-1000 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 72.5 #vw
+    //    ))
+    //}
+    //.font-size-900 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 66.5 #vw
+    //    ))
+    //}
+    //.font-size-850 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 60.5 #vw
+    //    ))
+    //}
+    //.font-size-800 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 56.5 #vw
+    //    ))
+    //}
+    //.font-size-700 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 48.5 #vw
+    //    ))
+    //}
+    //.font-size-600 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 40.5 #vw
+    //    ))
+    //}
+    //.font-size-500 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 32.5 #vw
+    //    ))
+    //}
+    //.font-size-400 {
+    //    @include polyfill-gaoji-set((
+    //        font-size: 24.5 #vw
+    //    ))
+    //}
+    .width-100-vw {
+        @include polyfill-gaoji-set((
+            width: 1080 #vw
+        ))
+    }
+    .height-16-9-width-vw {
+        @include polyfill-gaoji-set((
+            height: 607.5 #vw
+        ))
+    }
+    .height-100-vh {
+        @include polyfill-gaoji-set((
+            height: 1920 #vh
+        ))
+    }
+    //@include com-bilibili-gen-padding-polyfill();
+    //@include com-bilibili-gen-padding-polyfill(500, 25);
+    //@include com-bilibili-gen-padding-polyfill(400, 20);
+    //@include com-bilibili-gen-padding-polyfill(300, 15);
+    //@include com-bilibili-gen-padding-polyfill(200, 10);
+    //@include com-bilibili-gen-padding-polyfill(100, 5);
+    //@include com-bilibili-gen-margin-polyfill();
+    //@include com-bilibili-gen-margin-polyfill(500, 25);
+    //@include com-bilibili-gen-margin-polyfill(400, 20);
+    //@include com-bilibili-gen-margin-polyfill(300, 15);
+    //@include com-bilibili-gen-margin-polyfill(200, 10);
+    //@include com-bilibili-gen-margin-polyfill(100, 5);
+    @include com-zhilizhili-material-design-polyfill();
+    @include com-bilibili-drawer-view-polyfill();
+    @include com-zhilizhili-dialog-use-dialog--basic-polyfill();
+    @include com-bilibili-stack-polyfill();
+    @include com-bilibili-index-polyfill();
+    @include com-zhilizhili-examples-grid-polyfill();
+    @include com-zhilizhili-examples-form-polyfill();
+    @include com-bilibili-swipe-polyfill();
+    @include com-bilibili-image-polyfill();
+    @include com-bilibili-tableview-polyfill();
+    @include com-zhilizhili-examples-card-polyfill();
+    @include com-zhilizhili-examples-shape-polyfill();
+    .mdl-full-width {
+        @include polyfill-gaoji-set((
+            width: 360 #dp 
+        ))
+    }
+}
+
+@include polyfill();
+
+meta[name="support-vw-vh"] {
+    font-family: json-encode($polyfill);
+}
+@include com-zhilizhili-calc-transform-to-html();

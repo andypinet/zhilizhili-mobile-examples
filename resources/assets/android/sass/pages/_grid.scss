@@ -1,0 +1,116 @@
+@mixin com-zhilizhili-examples-grid() {
+    .layout.ui-collection.column-2 {
+        lost-utility: clearfix;
+        > .layout__item {
+            @include com-zhilizhili-layout-responsive-grid-init(".layout.ui-collection.column-2");
+        }
+    }
+    .layout.ui-collection.column-3 {
+        lost-utility: clearfix;
+        > .layout__item {
+            @include com-zhilizhili-layout-responsive-grid-init(".layout.ui-collection.column-3");
+        }
+    }
+    .layout.ui-collection.column-4 {
+        lost-utility: clearfix;
+        > .layout__item {
+            @include com-zhilizhili-layout-responsive-grid-init(".layout.ui-collection.column-4");
+        }
+    }
+}
+
+@mixin com-zhilizhili-examples-grid-polyfill() {
+    @include com-zhilizhili-layout-responsive-grid-polyfill(".layout.ui-collection.column-2", 2, (
+        width: ($desgin-device-width / 2) #vw
+    ), ());
+    @include com-zhilizhili-layout-responsive-grid-polyfill(".layout.ui-collection.column-3", 3, (
+        width: ($desgin-device-width / 3) #vw
+    ), ());
+    @include com-zhilizhili-layout-responsive-grid-polyfill(".layout.ui-collection.column-4", 4, (
+        width: ($desgin-device-width / 4) #vw
+    ), ());
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+                4, 
+                8, 
+                $desgin-device-width,
+                (
+                    width: 23%
+                ),
+                ".row-4",
+                100
+            ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }
+            }   
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+                3, 
+                8, 
+                $desgin-device-width,
+                (
+                  width: 32%    
+                ),
+                ".row-3",
+              100
+            ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }        
+            }; 
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+               2, 
+               8, 
+               $desgin-device-width,
+               (
+                   width: 49%
+               ),
+               ".row-2",
+               100
+           ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }          
+           }                                        
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+                4, 
+                4, 
+                $desgin-device-width,
+                (
+                    width: 24%
+                ),
+                ".row-4",
+                50
+            ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }
+            }             
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+              3, 
+              4, 
+              $desgin-device-width,
+              (
+                  width: 32%    
+              ),
+              ".row-3",
+              50
+          ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }        
+          };   
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+             2, 
+             4, 
+             $desgin-device-width,
+             (
+                 width: 49%
+             ),
+             ".row-2",
+             50
+         ) {
+                > .layout__item {
+                    background-color: get-custom-color("pink", "600");
+                }         
+         };                                         
+}

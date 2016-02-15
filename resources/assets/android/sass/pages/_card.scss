@@ -1,0 +1,62 @@
+@mixin com-zhilizhili-set-hide-state() {
+    &.hide {
+        @content;
+    }
+}
+
+$com-zhilizhili-transition-base-duration: 0.0012s !global;
+
+%transition-high-level {
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+@mixin com-zhilizhili-transition($props, $level: 600, $animationname: ease) {
+    $time: $level * $com-zhilizhili-transition-base-duration;
+    transition-property: $props;
+    transition-duration: $time;
+    transition-timing-function: $animationname;
+    @extend %transition-high-level;
+}
+
+@mixin com-zhilizhili-examples-card() {
+    [page=card] {
+        .test-picture-container {
+            background-color: get-custom-color("grey", "500");
+            @include register-hook("#{&}");
+        }
+        #expandPanel {
+            height: 90px;
+            overflow: auto;
+            @include com-zhilizhili-set-hide-state() {
+                overflow: hidden;
+                height: 0;
+            }
+            @include com-zhilizhili-polyfill-css-ver-high-level() {
+                @include com-zhilizhili-transition(height, 300);
+            }
+        }
+    }
+}
+
+@mixin com-zhilizhili-examples-card-polyfill() {
+    @include use-hook("[page=card] .test-picture-container") {
+        @include polyfill-android-set((
+            height: 120 #dp
+        ))
+    }
+    @include com-zhilizhili-layout-responsive-grid-gutter-polyfill(
+        4, 
+        4, 
+        $desgin-device-width,
+        (
+            width: 24%
+        ),
+        ".row-4",
+        50
+    ) {
+        > .layout__item {
+        }
+    }     
+}

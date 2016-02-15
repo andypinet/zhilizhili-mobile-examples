@@ -1,0 +1,143 @@
+@function dp-transform-vw($value) {
+    @return $value / 360 * $desgin-device-width;
+}
+
+@mixin com-zhilizhili-form-range-init() {
+    input[type="range"] {
+        appearance: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        margin: 0;
+        border: none;
+        outline: none; /* no focus outline */
+        @content;
+    }
+
+    // 解决浏览器差异
+    input[type="range"]::-moz-range-track {
+        border: inherit;
+        background: transparent;
+    }
+
+    input[type="range"]::-ms-track {
+        border: inherit;
+        color: transparent; /* don't drawn vertical reference line */
+        background: transparent;
+    }
+
+    input[type="range"]::-ms-fill-lower,
+    input[type="range"]::-ms-fill-upper {
+        background: transparent;
+    }
+
+    input[type="range"]::-ms-tooltip {
+        display: none;
+    }
+}
+
+@mixin com-zhilizhili-form-range-set-thumb-init($style) {
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+    input[type="range"]::-moz-range-thumb {
+        border: none;
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+
+    input[type="range"]::-ms-thumb {
+        border: 0;
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+}
+
+@mixin com-zhilizhili-form-range-set-thumb-polyfill($style) {
+    input[type="range"]::-webkit-slider-thumb {
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+    input[type="range"]::-moz-range-thumb {
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+
+    input[type="range"]::-ms-thumb {
+        @include com-zhilizhili-utils-map-to-style($style);
+    }
+}
+
+@mixin com-zhilizhili-examples-form() {
+    // 实例化全局form-checkbox icon
+    @include com-zhilizhili-form-checkbox-set-input-display(".form-checkbox") {
+        font-family: iconfont;
+    }
+    @include com-zhilizhili-form-checkbox-state-checked-set-input-display(".form-checkbox") {
+        content: get-iconfont-var("right");
+    }
+    // 实例化全局form-radio icon
+    @include com-zhilizhili-form-radio-set-input-display(".form-radio") {
+        font-family: iconfont;
+    }
+    @include com-zhilizhili-form-radio-state-checked-set-input-display(".form-radio") {
+        content: get-iconfont-var("circle");
+    }
+
+    @include com-zhilizhili-form-range-init() {
+        width: 100%;
+        height: 10px;
+        padding: 0;
+        border-radius: 14px;
+        background: get-custom-color("grey", "300");
+        box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
+    }
+
+    @include com-zhilizhili-form-range-set-thumb-init((
+        width: 18px,
+        height: 18px,
+        border-radius: 50%,
+        background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%)
+    ));
+    
+    @include com-zhilizhili-slider-init(".ui-rangeslider") {
+        height: 3px;
+        background-color: get-custom-color("blue", "600");
+        > input {
+            visibility: hidden;
+        }
+        @include register-hook("#{&}");
+    }
+
+    @include com-zhilizhili-slider-rangeslider-init(".ui-rangeslider") {
+        background-color: get-custom-color("pink", "600");
+    }
+
+    .page-form-custom-select--basic {
+        @include register-hook("#{&}");
+    }
+
+    .slider.ui-rangeslider.page-form-custom-range--full-width {
+        @include register-hook("#{&}");
+    }
+}
+
+@mixin com-zhilizhili-examples-form-polyfill() {
+    @include com-zhilizhili-form-radio-set-input-display-polyfill(".form-radio") {
+        @extend .mdl-font-size-600;
+    }
+    @include com-zhilizhili-form-checkbox-set-input-display-polyfill(".form-checkbox") {
+        @extend .mdl-font-size-600;
+    }
+    @include use-hook(".slider.ui-rangeslider") {
+        @include polyfill-gaoji-set((
+            width: 280 #dp
+        ))
+    }
+    @include use-hook(".page-form-custom-select--basic") {
+        @include polyfill-gaoji-set((
+            height: 30 #dp
+        ))
+    }
+    @include use-hook(".slider.ui-rangeslider.page-form-custom-range--full-width") {
+        @include polyfill-gaoji-set((
+            width: dp-transform-vw(360) #vw
+        ))
+    }
+}
