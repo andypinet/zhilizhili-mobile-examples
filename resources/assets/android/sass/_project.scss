@@ -1,0 +1,85 @@
+@mixin com-bilibili-gen-padding-polyfill($level: 600, $polyfill-value: 30, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .padding-horizontal-#{$level} {
+                @include polyfill-gaoji-set((
+                        padding-left: $polyfill-value  #vw,
+                        padding-right: $polyfill-value #vw
+                ));
+            }
+        } @else if $value == vertical {
+            .padding-vertical-#{$level} {
+                @include polyfill-gaoji-set((
+                        padding-top: $polyfill-value  #vw,
+                        padding-bottom: $polyfill-value  #vw
+                ));
+            }
+        } @else {
+            .padding-#{$value}-#{$level} {
+                @include polyfill-gaoji-set((
+                        padding-#{$value}: $polyfill-value  #vw
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-bilibili-gen-margin-polyfill($level: 600, $polyfill-value: 30, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .margin-horizontal-#{$level} {
+                @include polyfill-gaoji-set((
+                        margin-left: $polyfill-value  #vw,
+                        margin-right: $polyfill-value #vw
+                ));
+            }
+        } @else if $value == vertical {
+            .margin-vertical-#{$level} {
+                @include polyfill-gaoji-set((
+                        margin-top: $polyfill-value  #vw,
+                        margin-bottom: $polyfill-value  #vw
+                ));
+            }
+        } @else {
+            .margin-#{$value}-#{$level} {
+                @include polyfill-gaoji-set((
+                        margin-#{$value}: $polyfill-value  #vw
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-zhilizhili-material-design-size-gen($mode, $level: 600, $polyfill-value: 48, $list: (left,top,right,bottom,horizontal,vertical)) {
+    @each $value in $list {
+        @if $value == horizontal {
+            .mdl-#{$mode}-horizontal-#{$level} {
+                @include polyfill-android-set((
+                        #{$mode}-left: $polyfill-value  #dp,
+                        #{$mode}-right: $polyfill-value #dp
+                ));
+            }
+        } @else if $value == vertical {
+            .mdl-#{$mode}-vertical-#{$level} {
+                @include polyfill-android-set((
+                        #{$mode}-top: $polyfill-value  #dp,
+                        #{$mode}-bottom: $polyfill-value  #dp
+                ));
+            }
+        } @else {
+            .mdl-#{$mode}-#{$value}-#{$level} {
+                @include polyfill-android-set((
+                        #{$mode}-#{$value}: $polyfill-value  #dp
+                ));
+            }
+        }
+    }
+}
+
+@mixin com-zhilizhili-material-design-length-gen($mode, $level: 600, $polyfill-value: 48) {
+    .mdl-#{$mode}-#{$level} {
+        @include polyfill-android-set((
+                #{$mode}: $polyfill-value #dp
+        ))
+    }
+}

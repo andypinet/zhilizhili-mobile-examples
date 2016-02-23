@@ -54,7 +54,7 @@ document.addEventListener(READYEVENT, function() {
         initClass: "icon-arrow-down",
         changeClass: "icon-arrow-top"
     });
-
+    
     accrodion.init();
     accrodion.clickStream.subscribe(function() {
         console.log("click");
